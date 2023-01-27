@@ -1,0 +1,64 @@
+.Checkout {
+  &::before {
+    @include after-mobile {
+      min-height: 0px;
+      background: transparent;
+    }
+  }
+
+  &_Progress {
+    @include after-mobile {
+      background: var(--breadcrumbs-background);
+      min-height: var(--breadcrumbs-height);
+      display: flex;
+      margin-left: 2vw;
+      margin-right: 2vw;
+      padding: 8px 20px;
+    }
+    &_step {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33.33%;
+      .step_number {
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        color: #888;
+        font-size: 18px;
+        transition: all 0.5s linear;
+        &.active {
+          background-color: var(--primary-base-color);
+          color: #fff;
+        }
+        &[data-passed="passed"] {
+          background-color: var(--primary-base-color);
+          color: #fff;
+        }
+      }
+      &:last-child {
+        .step_number {
+          opacity: 0;
+        }
+      }
+      .step_bar {
+        height: 5px;
+        width: calc(100% - 50px);
+        opacity: 0;
+        transition: all 0.5s linear;
+        background-color: #ffffff;
+        &.active {
+          background-color: var(--primary-base-color);
+          opacity: 1;
+        }
+        &[data-passed="passed"] {
+          background-color: var(--primary-base-color);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
