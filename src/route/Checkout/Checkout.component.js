@@ -1,6 +1,6 @@
 import { Checkout as SourceCheckout } from "SourceRoute/Checkout/Checkout.component";
 import { ContentWrapper as SourceContentWrapper } from "SourceComponent/ContentWrapper/ContentWrapper.component";
-import CheckoutProgress from "./component/CheckoutProgress/CheckouProgress.component";
+import CheckoutProgress from "../../component/CheckoutProgress/CheckouProgress.component";
 import "./Checkout.override.style.scss";
 
 class Checkout extends SourceCheckout {
